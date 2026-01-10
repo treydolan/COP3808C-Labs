@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makebars</title>
+    <style>
+
+        /*We start by formatting the divs with the class bar*/
+        .bar {
+            width:20%;
+            height:0px;
+            background-color: #007BFF;
+            margin:3px;
+            position:absolute;
+            bottom:0px;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+        /*Next we format the outer div with the id mySelects*/
+        #mySelects {
+            position:relative;
+            width:80vw;
+            background-color:#A5EFFF;
+            margin:0 auto;
+        }
+
+        /*Now we format the div with the id myChart*/
+        #myChart {
+            position:relative;
+            width:80vw;
+            height:250px;
+            background-color: #E4E1E1;
+            margin:0 auto;
+        }
+    </style>
+    <script>
+        //this is a comment in JavaScript
+        //we make a function here in JS that is called with the onchange attribute we typed previously //in the HTML above
+        function makeBars() {
+            //this references the first div we gave the id n1 and stores in a variable
+            var n1 = document.getElementById("n1");
+
+            //this creates a variable val1
+            var val1 = n1.options[n1.selectedIndex].text;                                       
+            var n2 = document.getElementById("n2");
+            var val2 = n2.options[n2.selectedIndex].text;                                      
+            var n3 = document.getElementById("n3");
+            var val3 = n3.options[n3.selectedIndex].text;                                      
+            var n4 = document.getElementById("n4");
+            var val4 = n4.options[n4.selectedIndex].text;                        
+            var valArray= [val1, val2, val3 ,val4]                                             
+            //alert (valArray);
+            //the references all the divs we made in the body with the class bar
+            var barArray= document.getElementsByClassName("bar");
+            //alert(barArray.length);
+            for(var i=0;i<valArray.length;i++) {
+                barArray[i].style.height=(valArray[i]*40)+'px';
+                barArray[i].style.left=(i*25)+'%';            
+                barArray[i].style.opacity='0.5'; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--we have to create some div sections so we can format them to look like bars later with CSS and change them from not showing at all to showing with our JavaScript-->
+    <div id="mySelects">
+        <select id="n1" onchange="makeBars()"> <!--very important we give them each an id so we can call them by name later-->
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+        <select id="n2" onchange="makeBars()">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+        <select id="n3" onchange="makeBars()">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+        <select id="n4" onchange="makeBars()">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+    </div>
+    <div id="myChart">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</body>
+</html>
