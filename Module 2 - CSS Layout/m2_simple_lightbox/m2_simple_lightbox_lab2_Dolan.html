@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>just a page</title>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+
+    p {
+        padding:15px;
+    }                      
+
+    .black_overlay {
+        display: none;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        z-index: 1001;
+        opacity: 0.85;
+    }
+
+    .my_content {
+        display: none;
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        margin-left: -30vw;
+        width: 60vw;
+        height: 60vw;
+        z-index: 1002;
+        opacity: 0.9;
+        box-shadow: 0px 0px 15px 5px #000000;
+    }
+
+    img.closer {
+        position: absolute;
+        z-index: 1003;
+        right: 3px;
+        top: 3px;
+    }
+</style>
+<script>
+    function closeBox(){
+
+        document.getElementById('box1').style.display='none';
+
+        document.getElementById('dark').style.display='none'
+    }
+
+    function openBox(){
+
+        document.getElementById('box1').style.display='block';
+
+        document.getElementById('dark').style.display='block'                              
+    }
+</script>
+</head>
+<body>
+    <p><a href = "javascript:void(0)" onclick ="openBox()">Click me</a> </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dolor. Vestibulum condimentum, diam id fringilla facilisis, augue leo tempor dui, eu dignissim arcu enim eu tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer hendrerit auctor nunc. Proin et urna et nulla dapibus congue. Vestibulum porta nulla ut justo. Duis pharetra adipiscing mi. Morbi porttitor diam. Proin tempus eros at nisi. Pellentesque aliquet risus vel nibh.</p>
+    <p>Nullam sit amet tortor at odio pretium aliquam. Suspendisse potenti. Fusce suscipit fringilla risus. Etiam et dolor dapibus odio tincidunt elementum. Duis quis elit sagittis tellus vehicula lacinia. Nulla facilisi. Phasellus nisl. Sed sit amet diam. Vestibulum sit amet lectus eu dolor scelerisque facilisis. Etiam at velit. Donec consequat risus sit amet urna. Vivamus blandit suscipit sem. In egestas, orci et laoreet venenatis, nibh lorem dictum felis, quis dictum pede metus in erat. Aliquam erat volutpat. Aliquam porta justo nec nibh. In neque risus, eleifend in, pellentesque ut, placerat ut, risus. Aliquam lorem. Praesent blandit velit at justo.</p>
+    <p>Sed at pede semper sapien iaculis tempor. Ut ut leo et enim faucibus pellentesque. Quisque ac dolor ut est lacinia vehicula. Fusce a libero. In adipiscing, mi ut cursus accumsan, augue erat lacinia leo, consequat adipiscing lectus justo sed quam. Curabitur pede neque, blandit et, facilisis imperdiet, pretium non, felis. Nam vitae orci et erat rutrum commodo. Vestibulum nec libero a metus viverra facilisis. Duis neque. Sed cursus fermentum pede. Fusce odio nisi, tristique quis, feugiat ut, tempor quis, turpis. Ut quam. Fusce id tortor. Suspendisse pede nibh, semper non, ultrices et, placerat non, ligula.</p>
+    <p>Nulla quis leo. Pellentesque aliquam commodo justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque lobortis ligula in orci. Vestibulum congue augue sit amet tortor. Vivamus volutpat. Duis metus tellus, pharetra at, ultricies nec, porta non, lacus. Nam nec orci ullamcorper diam porttitor laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis, felis nec convallis interdum, mauris dui sagittis erat, sed varius tortor nibh a tortor. Praesent dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non ante tempor nisl euismod vehicula. Vestibulum vel leo. Quisque cursus lacus sed nisi. Pellentesque vitae dui.</p>
+    <p>Integer mollis erat sit amet mauris. Ut rhoncus, urna a lobortis viverra, velit purus tincidunt arcu, at feugiat sem diam at diam. Sed non nisl ac est aliquam fermentum. Vestibulum tincidunt aliquam pede. Nunc odio justo, pulvinar a, dictum eget, ullamcorper ut, justo. Curabitur ac tortor. Nulla varius. Quisque pharetra. Fusce orci ipsum, mattis at, venenatis sit amet, vulputate quis, erat. Aliquam dapibus, diam quis hendrerit iaculis, orci arcu fringilla ligula, nec lacinia justo ligula sed orci. Sed facilisis. Duis volutpat pharetra ante. Donec vestibulum pede hendrerit ligula. Maecenas lobortis dui vel lacus feugiat ultrices. Suspendisse ipsum. Donec varius. Aenean ipsum. </p>
+    <div id="box1" class="my_content"> <a href = "javascript:void(0)" onclick = "closeBox()">
+        <img  class="closer" src="x_circle_24dp_RED_FILL0_wght400_GRAD0_opsz24.svg" width="30" height="30" alt=""/> </a>
+        <img src="pic.jpg" width="100%" height="100%" alt=""/>
+    </div>
+    <!--end of box-->
+    <div id="dark" class="black_overlay"></div>
+    <!--end of blackbox-->
+</body>
+</html>
