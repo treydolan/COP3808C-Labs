@@ -60,7 +60,7 @@ nav ul {
 #page { /* the part that scrolls */
 	width: 100vw;
 	position: relative;/*so its is a parent to positioned children, and to move it down*/
-	top: 150px;
+	top: 170px;
 	background-color: #fff;
 }
 #show { /*the little field top left,only while developing, for showing js values*/
