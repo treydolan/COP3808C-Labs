@@ -29,9 +29,10 @@ $(document).ready(function () { //make sure all is loaded
 		//vars for sec 3
 		var sec3Top = $(".parallax-3").offset().top;
 
+		//vars for sec 4
+		var sec4Top = $(".parallax-4").offset().top;
+
 		//alert(sec2Top);
-		
-		
 		
 		////////////////////////////////
 	function findScrolls(){
@@ -62,7 +63,6 @@ var doit; //declare a new obj
 			}, 1000);
 		});
 
-
 		$("#to_s2").click(function () {
 			$('html, body').animate({
 				scrollTop: ((sec2Top - 60) + "px")
@@ -74,11 +74,17 @@ var doit; //declare a new obj
 				scrollTop: ((sec3Top - 60) + "px")
 			}, 1000);
 		});
+
+		$("#to_s4").click(function () {
+			$('html, body').animate({
+				scrollTop: ((sec4Top - 60) + "px")
+			}, 1000);
+		});
 		//////////////////////////////////
 		$(window).scroll(function () { //while scrolling.
 			var where = $(window).scrollTop();
 			//where are we from the top of the window.
-			$("#show").text(parseInt(where));///////////////REMEMBER TO CANCEL BEFORE DEPLOPY!
+			$("#show").text(parseInt(where));///////////////REMEMBER TO CANCEL BEFORE DEPLOY!
 			//to show or not to show the "to_top" button.
 			if (where > 200 && !to_top_fired) {
 				//if scrolled past 200, and not fired yet...

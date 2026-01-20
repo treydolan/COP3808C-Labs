@@ -1,32 +1,41 @@
 @charset "UTF-8";
 /* CSS Document */
+:root {
+	--background: #070A0F;
+	--surface-cards: #0E1420;
+	--primary-accent: #22D3EE;
+	--secondary-accent: #A78BFA;
+	--text: #E5E7EB;
+	--muted-text: #9CA3AF;
+	--lines-borders: #223047;
+}
+
+
 * {
 	margin: 0;
 	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif"
 }
-header { /*make sure anyhing in the header transitions*/
+header { /* make sure anything in the header transitions */
 	transition: all 0.3s;
 }
-.header_big { /*header when big*/
+.header_big { /* header when big */
 	height: 150px;
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 999;/*above averything*/
-	width: 100vw; /*100% of viewport*/
-	background-color: #222;
+	z-index: 999;/* above everything */
+	width: 100vw; /* 100% of viewport */
+	background-color: var(--background);
 	text-align: center;
 	padding-top: 35px;
 }
-.header_small {/*changes when small*/
+.header_small {/* changes when small */
 	height: 60px;
-	background-color: #003278;
+	background-color: var(--background);
 	padding-top: 7px;
 }
 nav ul {
@@ -34,65 +43,65 @@ nav ul {
 }
 .header_big nav ul li {
 	width: 20vw;
-	display: inline-block; /*behave like boxes- side by side.*/
+	display: inline-block; /* behave like boxes - side by side. */
 	text-align: center;
 }
-.header_small nav ul li { /*lines when small*/
+.header_small nav ul li { /* lines when small */
 	width: auto;
 }
 .header_big nav ul li a {
 	font-family: "Arial Black", Arial;
 	display: block;
 	padding: 10px;
-	color: #fff;
+	color: var(--text);
 	text-decoration: none;
 	font-size: 35px;
 	transition: all 1s;
 	text-transform: uppercase;
 }
-.header_small nav ul li a {/*links in header small*/
-	color: #E6FF00;
+.header_small nav ul li a {/* links in header small */
+	color: var(--muted-text);
 	font-size: 18px;
 }
-.header_big nav ul li a:hover { /*links when hovered*/
-	color: #F44;
+.header_big nav ul li a:hover { /* links when hovered */
+	color: var(--primary-accent);
 }
 #page {
 	width: 100vw;
-	position: relative;/*so its is a parent to positioned children, and to move it down*/
+	position: relative;/* so its is a parent to positioned children, and to move it down */
 	top: 150px;
 	background-color: #fff;
 }
-#show { /*the little field top left,only while developing, for showing js values*/
+#show { /* the little field top left,only while developing, for showing js values */
 	position: fixed;
 	left: 0;
 	top: 0;
 	background-color: yellow;
 	z-index: 9999;
 }
-.all_parallax { /*things mutual to all the prallax panels, on large screens*/
+.all_parallax { /* things mutual to all the parallax panels, on large screens */
 	height: 600px;
-	background-position: center center;/*in case image bigger than parralax*/
+	background-position: center center;/* in case image bigger than parallax */
 	background-repeat: no-repeat;
-	background-attachment: fixed;/*great for desktop, not for mobile*/
+	background-attachment: fixed;/* great for desktop, not for mobile */
 	background-size: cover;
 	position: relative;
 }
-.all_parallax h1 { /*any h1 inside any parralax*/
+.all_parallax h1 { /* any h1 inside any parallax */
 	font-family: "Arial Black", Arial;
-	position: absolute; /*to its parent, all parallax*/
+	position: absolute; /* to its parent, all parallax */
 	top: 50%;
-	left: 50%;/*in the center of parent*/
+	left: 50%;/* in the center of parent */
 	transform: translate(-50%, -50%);
 	color: rgba(255, 255, 255, 0.8);
 	font-size: 75px;
 	text-align: center;
-	line-height: 0.9;/*make sure the h1 is not taller than the font*/
+	line-height: 0.9;/* make sure the h1 is not taller than the font */
 	font-weight: 900;
 	text-transform: uppercase;
 	text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
 }
-/*things unique to each panel*/
+/* things unique to each panel */
 .parallax-1 {
 	background-image: url(../images/image1.jpg);
 }
@@ -103,78 +112,82 @@ nav ul {
 	background-image: url(../images/image3.jpg);
 }
 
-.all_content {/*things mutual to all the prallax panels content, on large screens*/
-	width: 960px;/*be 960 px on large screens*/
-	max-width: 100vw;/*unless the viewport is narrower*/
+.all_content {/* things mutual to all the parallax panels content, on large screens */
+	width: 960px;/* be 960 px on large screens */
+	max-width: 100vw;/* unless the viewport is narrower */
 	margin: 0 auto;
 	padding: 15px;
 }
-.all_content h2 { /*all the  h2's in  all contents */
+.all_content h2 { /* all the  h2's in  all contents */
 	margin-bottom: 20px;
 	font-size: 30px;
 }
-.all_content p { /*all the  p's in  all contents */
+.all_content p { /* all the  p's in  all contents */
 	margin-bottom: 10px;
 	font-size: 18px;
 	font-weight: 300;
-	color: #777;
+	color: var(--muted-text);
 	line-height: 1.5;
 }
-#toTop {/*the icon that will scroll back to top*/
+#toTop { /* the icon that will scroll back to top */
 	position: fixed;
 	z-index: 1000;
 	bottom: 0;
 	left: 0;
 	width: 50px;
 	height: 50px;
-	background-image: url(../images/top_icon.png);
-	background-size: 100% 100%;
-	cursor: pointer;/*to change curs0r when hover.*/
+	background-color: var(--muted-text);
+
+	background-image: url(../images/icons/svg-path.svg);
+	background-size: 85% 85%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 1em;
+	cursor: pointer;/* to change curs0r when hover. */
 }
 
-/*media query*/
+/* media query */
 @media only screen and (max-width: 959px){
-/*if viewport any narrower than 960 here is whats going to change*/
-.header_big {
-	height: 90px;/*make header shorter*/
-}
-.header_small {
-	height: 60px;/*make header shorter*/
-}
-.header_big nav ul li {
-	width: 30vw;/*each li about a third*/
-}
-.header_big nav ul li a {
-	font-size: 14px;/*make sure text big enough to click on*/
-	padding: 4px;
-}
-#page {
-	top: 90px;/*adgust to the new height of header*/
-}
-.all_parallax {
-	height: 70px;
-	background-attachment: scroll;/*for phones- regular bg scrolling*/
-}
-.all_parallax h1 {
-	font-size: 140%/*h1 get a little bigger*/
-}
-.parallax-1 {
-	background-image: url(../images/image1_mob.jpg);
-}
-.parallax-2 {
-	background-image: url(../images/image2_mob.jpg);
-}
-.parallax-3 {
-	background-image: url(../images/image3_mob.jpg);
-}
-/*smaller images for smaller screens*/
-	
-
-.content p {
-	font-size: 120%;/*make it readable!*/
-}
-#toTop {
-	width: 40px;
-	height: 40px;/*on small screens smaller icon*/
-}
-}/*end media query*/
+	/* if viewport any narrower than 960 here is whats going to change */
+	.header_big {
+		height: 90px;/* make header shorter */
+	}
+	.header_small {
+		height: 60px;/* make header shorter */
+	}
+	.header_big nav ul li {
+		width: 30vw;/* each li about a third */
+	}
+	.header_big nav ul li a {
+		font-size: 14px;/* make sure text big enough to click on */
+		padding: 4px;
+	}
+	#page {
+		top: 90px;/* adjust to the new height of header */
+	}
+	.all_parallax {
+		height: 70px;
+		background-attachment: scroll;/* for phones- regular bg scrolling */
+	}
+	.all_parallax h1 {
+		font-size: 140%/* h1 get a little bigger */
+	}
+	.parallax-1 {
+		background-image: url(../images/image1_mob.jpg);
+	}
+	.parallax-2 {
+		background-image: url(../images/image2_mob.jpg);
+	}
+	.parallax-3 {
+		background-image: url(../images/image3_mob.jpg);
+	}
+	/* smaller images for smaller screens */
+		
+	.content p {
+		font-size: 120%;/* make it readable! */
+	}
+	#toTop {
+		width: 40px;
+		height: 40px;/* on small screens smaller icon */
+	}
+}/* end media query */
