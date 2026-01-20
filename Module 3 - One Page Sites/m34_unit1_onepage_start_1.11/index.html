@@ -6,6 +6,7 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport">
 <!--force all devices to report their true width-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Link to jQuery has to come before link to script that uses library -->
 <script src="js/par_scripts.js"></script>
 <link rel="stylesheet" href="css/par.css" type="text/css">
 </head>
@@ -21,16 +22,20 @@
 </header>
 <!--end of header-->
 <div id="page">
-  <div id="show">00</div>
+<!-- Div above can be replaced by "main" -->
+  <!-- <div id="show">00</div> -->
   <!--instead of an alert, for developer use only. comment out before final deployment.-->
 	
 	
 	<!--SECTIONS-->
   <!--start section 1-->
   <div class="all_parallax parallax-1">
+  <!-- Obey both classes (all_parallax and parallax-1) -->
     <h1>Heading One</h1>
   </div>
   <div class="all_content content-1">
+  <!-- all_content mutual styes, content-# unique -->
+  <!-- div above could also been a "section" -->
     <h2>Content One</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quibusdam consequatur explicabo maxime porro laboriosam omnis ullam, aspernatur ipsum odit debitis consectetur illo dolor pariatur vitae distinctio unde et quis.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quibusdam consequatur explicabo maxime porro laboriosam omnis ullam, aspernatur ipsum odit debitis consectetur illo dolor pariatur vitae distinctio unde et quis.</p>

@@ -1,36 +1,35 @@
 @charset "UTF-8";
 /* CSS Document */
+/* Reset */
 * {
 	margin: 0;
 	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif"
 }
-header { /*make sure anyhing in the header transitions*/
+header { /*make sure anything in the header transitions (size, font size, color)*/
 	transition: all 0.3s;
 }
 .header_big { /*header when big*/
 	height: 150px;
-	position: fixed;
+	position: fixed; /*stay at top of viewport*/
 	top: 0;
 	left: 0;
-	z-index: 999;/*above averything*/
+	z-index: 999;/*above everything*/
 	width: 100vw; /*100% of viewport*/
 	background-color: #222;
 	text-align: center;
-	padding-top: 35px;
+	padding-top: 35px; /*push down from top*/
 }
 .header_small {/*changes when small*/
 	height: 60px;
 	background-color: #003278;
-	padding-top: 7px;
+	padding-top: 7px; /*less padding when small*/
 }
 nav ul {
-	list-style-type: none;
+	list-style-type: none; /*no bullets*/
 }
 .header_big nav ul li {
 	width: 20vw;
@@ -38,7 +37,7 @@ nav ul {
 	text-align: center;
 }
 .header_small nav ul li { /*lines when small*/
-	width: auto;
+	width: auto; /* Instead of 20vw, automatically adjust to text width */
 }
 .header_big nav ul li a {
 	font-family: "Arial Black", Arial;
@@ -56,35 +55,36 @@ nav ul {
 }
 .header_big nav ul li a:hover { /*links when hovered*/
 	color: #F44;
+	/* Does not need to change for Mobile, but still works for large screens */
 }
-#page {
+#page { /* the part that scrolls */
 	width: 100vw;
 	position: relative;/*so its is a parent to positioned children, and to move it down*/
 	top: 150px;
 	background-color: #fff;
 }
 #show { /*the little field top left,only while developing, for showing js values*/
-	position: fixed;
+	position: fixed; /* stuck to top left */
 	left: 0;
 	top: 0;
 	background-color: yellow;
 	z-index: 9999;
 }
-.all_parallax { /*things mutual to all the prallax panels, on large screens*/
+.all_parallax { /*things mutual to all the parallax panels, on large screens*/
 	height: 600px;
-	background-position: center center;/*in case image bigger than parralax*/
-	background-repeat: no-repeat;
-	background-attachment: fixed;/*great for desktop, not for mobile*/
+	background-position: center center;/*in case image bigger than parallax*/
+	background-repeat: no-repeat; /* in case image smaller than parallax*/
+	background-attachment: fixed; /*dont scroll with body, great for desktop, not for mobile*/
 	background-size: cover;
-	position: relative;
+	position: relative; /* parents of absolutely positioned h1*/
 }
-.all_parallax h1 { /*any h1 inside any parralax*/
+.all_parallax h1 { /*any h1 inside any parallax*/
 	font-family: "Arial Black", Arial;
 	position: absolute; /*to its parent, all parallax*/
 	top: 50%;
 	left: 50%;/*in the center of parent*/
-	transform: translate(-50%, -50%);
-	color: rgba(255, 255, 255, 0.8);
+	transform: translate(-50%, -50%); /* Compensate for half width and h */
+	color: rgba(255, 255, 255, 0.8); /* Alpha channel Opacity */
 	font-size: 75px;
 	text-align: center;
 	line-height: 0.9;/*make sure the h1 is not taller than the font*/
@@ -149,7 +149,7 @@ nav ul {
 	padding: 4px;
 }
 #page {
-	top: 90px;/*adgust to the new height of header*/
+	top: 90px;/*adjust to the new height of header*/
 }
 .all_parallax {
 	height: 70px;

@@ -35,14 +35,14 @@ $(document).ready(function () { //make sure all is loaded
 		
 		////////////////////////////////
 	function findScrolls(){
- location.reload();
+ location.reload(); //reload the page
 		
 	}		
 var doit; //declare a new obj
 	$(window).resize(function () { //every time the window is resized call func
 		//alert("res")
 		clearTimeout(doit); //clear prev values
-		doit = setTimeout(findScrolls, 1000); //after 600 ms call the func findScrolls
+		doit = setTimeout(findScrolls, 1000); //after 1000 ms call the func findScrolls (remeasures the scroll distances)
 	});	
 		
 		
@@ -62,7 +62,7 @@ var doit; //declare a new obj
 			}, 1000);
 		});
 
-
+		// Anywhere but heading 1, header will only be 60px
 		$("#to_s2").click(function () {
 			$('html, body').animate({
 				scrollTop: ((sec2Top - 60) + "px")
@@ -75,10 +75,10 @@ var doit; //declare a new obj
 			}, 1000);
 		});
 		//////////////////////////////////
-		$(window).scroll(function () { //while scrolling.
+		$(window).scroll(function () { //while scrolling 60 times per sec.
 			var where = $(window).scrollTop();
 			//where are we from the top of the window.
-			$("#show").text(parseInt(where));///////////////REMEMBER TO CANCEL BEFORE DEPLOPY!
+			//$("#show").text(parseInt(where));///////////////REMEMBER TO CANCEL BEFORE DEPLOY!
 			//to show or not to show the "to_top" button.
 			if (where > 200 && !to_top_fired) {
 				//if scrolled past 200, and not fired yet...
