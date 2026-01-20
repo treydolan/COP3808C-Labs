@@ -58,21 +58,21 @@ var doit; //declare a new obj
 		/////////////////navigation functions///////////////////////////////////////////////
 		$("#to_s1").click(function () {
 			$('html, body').animate({
-				scrollTop: ((sec1Top - 150) + "px")
-			}, 1000);
+				scrollTop: ((sec1Top - 170) + "px")
+			}, 500);
 		});
 
 		// Anywhere but heading 1, header will only be 60px
 		$("#to_s2").click(function () {
 			$('html, body').animate({
-				scrollTop: ((sec2Top - 60) + "px")
-			}, 1000);
+				scrollTop: ((sec2Top - 70) + "px")
+			}, 800);
 		});
 
 		$("#to_s3").click(function () {
 			$('html, body').animate({
-				scrollTop: ((sec3Top - 60) + "px")
-			}, 1000);
+				scrollTop: ((sec3Top - 70) + "px")
+			}, 800);
 		});
 		//////////////////////////////////
 		$(window).scroll(function () { //while scrolling 60 times per sec.

@@ -13,7 +13,7 @@ header { /*make sure anything in the header transitions (size, font size, color)
 	transition: all 0.3s;
 }
 .header_big { /*header when big*/
-	height: 150px;
+	height: 170px;
 	position: fixed; /*stay at top of viewport*/
 	top: 0;
 	left: 0;
@@ -24,7 +24,7 @@ header { /*make sure anything in the header transitions (size, font size, color)
 	padding-top: 35px; /*push down from top*/
 }
 .header_small {/*changes when small*/
-	height: 60px;
+	height: 70px;
 	background-color: #003278;
 	padding-top: 7px; /*less padding when small*/
 }
@@ -127,7 +127,7 @@ nav ul {
 	left: 0;
 	width: 50px;
 	height: 50px;
-	background-image: url(../images/top_icon.png);
+	background-image: url(../images/arrow_upward_alt_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png);
 	background-size: 100% 100%;
 	cursor: pointer;/*to change curs0r when hover.*/
 }
