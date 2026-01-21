@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #000;
+	font-family:"Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-weight:200;
+	
+}
+
+
+
+
+video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background:url(images/traffic.jpg) no-repeat;
+	background-size: cover;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+
+.stopfade {
+	opacity: 0.5;
+}
+
+#pbutton {
+	display: block;
+	width: 80%;
+	padding: .4vw;
+	border: none;
+	font-size: 1vw;
+	background: rgba(255,255,255,0.23);
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	-webkit-transition: .3s background;
+	transition: .3s background;
+}
+
+#pbutton:hover {
+	background: rgba(0,0,0,0.5);
+}
+
+.my_header {
+	position: fixed;
+	z-index: 999;
+	width: 23vw;
+	left: 2vw;
+	top: 2vh;
+	background-color: rgba(255,255,255,0);
+	padding: 2vw;
+	min-height: 96vh;
+}
+
+.my_header h1 {
+	font-size: 5vw;
+	line-height: 1;
+	color: #fff;
+	padding-bottom: 1vw;
+	cursor: pointer;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+.my_header nav ul li {
+	width: 100%;
+	display: block;
+	text-align: left;
+}
+
+.my_header nav ul li a {
+	display: block;
+	padding: 10px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.5vw;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+	font-weight:bold;
+	text-transform: uppercase;
+}
+
+.my_header nav ul li a:hover,
+.my_header h1:hover
+{
+	color: #FB7;
+}
+
+.my_current{
+	color: #fea !important;
+	
+}
+
+
+#content {
+	position: absolute;
+	z-index: 1;
+	width: 71vw;
+	right: 2vw;
+	top: 2vh;
+	background: rgba(55,55,55,0.3);
+	padding: 2vw;
+	min-height: 80vh;
+	border-radius: 10px;
+	
+}
+
+#content h2 {
+	font-size: 4vw;
+	line-height: 1;
+	color: #FFE787;
+	padding-bottom: 1vw;
+	text-transform: uppercase;
+}
+
+#content p {
+	font-size: 1.3vw;
+	line-height: 1.1;
+	color: #eee;
+	padding-bottom: 1vh;
+}
+
+#content img {
+	float: right;
+	margin: 0.5vw;
+	width: 20vw;
+	height: auto;
+	opacity: 0.9;
+}
+
+@media only screen and (max-width: 959px) {
+
+body {
+	background:black;
+}
+
+#bgvid,
+#pbutton {
+	display: none;
+}
+
+
+.my_header nav ul li a {
+	font-size: 1em;
+}
+
+.my_header {
+	left: 1vw;
+	top: 1vw;
+	padding: 1vw;
+}
+
+#content {
+	background: url(images/traffic.jpg) no-repeat top center;
+	background-size: cover;
+	width: 73vw;
+	right: 1vw;
+	top: 1vw;
+	padding: 1vw;
+}
+
+#content h2 {
+	font-size: 2em;
+	line-height: 1.6;
+	
+	
+}
+
+#content p {
+	font-size: 1.5em;
+}
+
+#content img {
+	
+	width: 50%;
+	
+}
+}
+
+@media only screen and (max-width: 600px) {
+
+.my_header nav ul li a {
+	font-size: 1.2em;
+}
+
+.my_header {
+	background-color:black;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	padding: 0.5vw;
+	min-height: 80px;
+}
+
+.my_header h1 {
+	font-size: 1.5em;
+	line-height: 1.3;
+	text-align: center;
+}
+
+.my_header nav ul li {
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+
+.my_header nav ul li a {
+	padding: 5px;
+	font-size: 75%;
+}
+
+#content {
+	width: 100vw;
+	right: 0vw;
+	top: 80px;
+	padding: 2%
+}
+
+#content p {
+	font-size: 120%;
+	line-height: 1;
+	padding-bottom: 5%;
+}
+
+#content img {
+	float: none;
+	margin: 0.5% 7%;
+	width: 86%;
+	height: auto;
+}
+}

@@ -67,7 +67,7 @@ nav ul {
 	text-transform: uppercase;
 }
 .header_small nav ul li a {/* links in header small */
-	color: var(--muted-text);
+	color: var(--primary-accent);
 	font-size: 18px;
 }
 .header_big nav ul li a:hover { /* links when hovered */
