@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
 :root {
+	/* Color
+	------------------------ */
 	--background: #070A0F;
 	--surface-cards: #0E1420;
 	--primary-accent: #22D3EE;
@@ -8,6 +10,11 @@
 	--text: #E5E7EB;
 	--muted-text: #9CA3AF;
 	--lines-borders: #223047;
+	
+	/* Fonts
+	------------------------ */
+	--font-header: "Arial Black", Arial;
+	--font-body: "Helvetica Neue", Helvetica, Arial, "sans-serif";
 }
 
 
@@ -17,19 +24,19 @@
 	box-sizing: border-box;
 }
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif"
+	font-family: var(--font-body);
 }
 header { /* make sure anything in the header transitions */
 	transition: all 0.3s;
 }
 .header_big { /* header when big */
-	height: 150px;
+	height: 165px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 999;/* above everything */
 	width: 100vw; /* 100% of viewport */
-	background-color: var(--background);
+	background-color: var(--surface-cards);
 	text-align: center;
 	padding-top: 35px;
 }
@@ -50,10 +57,10 @@ nav ul {
 	width: auto;
 }
 .header_big nav ul li a {
-	font-family: "Arial Black", Arial;
+	font-family: var(--font-header);
 	display: block;
 	padding: 10px;
-	color: var(--text);
+	color: var(--primary-accent);
 	text-decoration: none;
 	font-size: 35px;
 	transition: all 1s;
@@ -64,13 +71,13 @@ nav ul {
 	font-size: 18px;
 }
 .header_big nav ul li a:hover { /* links when hovered */
-	color: var(--primary-accent);
+	color: var(--secondary-accent);
 }
 #page {
 	width: 100vw;
 	position: relative;/* so its is a parent to positioned children, and to move it down */
-	top: 150px;
-	background-color: #fff;
+	top: 165px;
+	background-color: var(--surface-cards);
 }
 #show { /* the little field top left,only while developing, for showing js values */
 	position: fixed;
@@ -88,12 +95,13 @@ nav ul {
 	position: relative;
 }
 .all_parallax h1 { /* any h1 inside any parallax */
-	font-family: "Arial Black", Arial;
+	font-family: var(--font-header);
 	position: absolute; /* to its parent, all parallax */
 	top: 50%;
 	left: 50%;/* in the center of parent */
 	transform: translate(-50%, -50%);
-	color: rgba(255, 255, 255, 0.8);
+	color: var(--text);
+	opacity: .8;
 	font-size: 75px;
 	text-align: center;
 	line-height: 0.9;/* make sure the h1 is not taller than the font */
@@ -103,13 +111,16 @@ nav ul {
 }
 /* things unique to each panel */
 .parallax-1 {
-	background-image: url(../images/image1.jpg);
+	background-image: url(../images/steve-pancrate-Wy-Z2wg0fYI-unsplash.jpg);
 }
 .parallax-2 {
-	background-image: url(../images/image2.jpg);
+	background-image: url(../images/pawel-czerwinski-4vkaa4OvyCM-unsplash.jpg);
 }
 .parallax-3 {
-	background-image: url(../images/image3.jpg);
+	background-image: url(../images/john-de-jong-GGoy4as1kZg-unsplash.jpg);
+}
+.parallax-4 {
+	background-image: url(../images/pawel-czerwinski-eybM9n4yrpE-unsplash.jpg);
 }
 
 .all_content {/* things mutual to all the parallax panels content, on large screens */
@@ -119,6 +130,7 @@ nav ul {
 	padding: 15px;
 }
 .all_content h2 { /* all the  h2's in  all contents */
+	color: var(--primary-accent);
 	margin-bottom: 20px;
 	font-size: 30px;
 }
@@ -126,7 +138,7 @@ nav ul {
 	margin-bottom: 10px;
 	font-size: 18px;
 	font-weight: 300;
-	color: var(--muted-text);
+	color: var(--text);
 	line-height: 1.5;
 }
 #toTop { /* the icon that will scroll back to top */
@@ -144,6 +156,12 @@ nav ul {
 	background-position: center;
 	border-radius: 1em;
 	cursor: pointer;/* to change curs0r when hover. */
+}
+
+footer {
+	padding-top: 100px;
+	text-align: center;
+	
 }
 
 /* media query */
@@ -166,20 +184,23 @@ nav ul {
 		top: 90px;/* adjust to the new height of header */
 	}
 	.all_parallax {
-		height: 70px;
+		height: 65px;
 		background-attachment: scroll;/* for phones- regular bg scrolling */
 	}
 	.all_parallax h1 {
 		font-size: 140%/* h1 get a little bigger */
 	}
 	.parallax-1 {
-		background-image: url(../images/image1_mob.jpg);
+		background-image: url(../images/steve-pancrate-Wy-Z2wg0fYI-unsplash-mobile.jpg);
 	}
 	.parallax-2 {
-		background-image: url(../images/image2_mob.jpg);
+		background-image: url(../images/pawel-czerwinski-4vkaa4OvyCM-unsplash-mobile.jpg);
 	}
 	.parallax-3 {
-		background-image: url(../images/image3_mob.jpg);
+		background-image: url(../images/john-de-jong-GGoy4as1kZg-unsplash-mobile.jpg);
+	}
+	.parallax-4 {
+		background-image: url(../images/pawel-czerwinski-eybM9n4yrpE-unsplash-mobile.jpg);
 	}
 	/* smaller images for smaller screens */
 		

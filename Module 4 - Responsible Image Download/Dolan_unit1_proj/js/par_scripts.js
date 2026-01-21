@@ -59,7 +59,7 @@ var doit; //declare a new obj
 		/////////////////navigation functions///////////////////////////////////////////////
 		$("#to_s1").click(function () {
 			$('html, body').animate({
-				scrollTop: ((sec1Top - 150) + "px")
+				scrollTop: ((sec1Top - 165) + "px")
 			}, 1000);
 		});
 
