@@ -99,14 +99,14 @@ var doit; //declare a new obj
 			}
 
 			//make header switch looks.
-			if (where > 200 && !header_fired) { //if scrolled>200 and header still big....
+			if (where > sec2Top && !header_fired) { //if scrolled>200 and header still big....
 				$("#top_header").addClass("header_small");
 				//add the class header_small
 				header_fired = true; //mark as fired
 			}
 
 			//if scrolled<200 and header still small....
-			if (where < 200 && header_fired) {
+			if (where < sec2Top && header_fired) {
 				$("#top_header").removeClass("header_small");
 				//remove the class header_small
 				header_fired = false; //mark as  not fired
