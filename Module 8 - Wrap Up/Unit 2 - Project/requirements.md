@@ -3,7 +3,7 @@
 ## Create a site. The topic is one of your choice, so long as:
 * It does not violate copyrights or trademarks in any way. A fictitious topic is recommended.
 * It is NOT a topic you have used already in any assignment in this class.
- 
+git 
 ## Choose ONE of the 3 structures we covered this semester to build your site:
 * Parallax-scroll (like Unit 1 project)
 * Video background + Ajax load (like m56 framework)
