@@ -84,7 +84,7 @@ var doit; //declare a new obj
 		$(window).scroll(function () { //while scrolling.
 			var where = $(window).scrollTop();
 			//where are we from the top of the window.
-			$("#show").text(parseInt(where));///////////////REMEMBER TO CANCEL BEFORE DEPLOY!
+			//$("#show").text(parseInt(where));///////////////REMEMBER TO CANCEL BEFORE DEPLOY!
 			//to show or not to show the "to_top" button.
 			if (where > 200 && !to_top_fired) {
 				//if scrolled past 200, and not fired yet...
