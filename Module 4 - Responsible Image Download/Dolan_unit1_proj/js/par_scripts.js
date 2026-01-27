@@ -65,19 +65,19 @@ var doit; //declare a new obj
 
 		$("#to_s2").click(function () {
 			$('html, body').animate({
-				scrollTop: ((sec2Top - 60) + "px")
+				scrollTop: ((sec2Top - 65) + "px")
 			}, 1000);
 		});
 
 		$("#to_s3").click(function () {
 			$('html, body').animate({
-				scrollTop: ((sec3Top - 60) + "px")
+				scrollTop: ((sec3Top - 65) + "px")
 			}, 1000);
 		});
 
 		$("#to_s4").click(function () {
 			$('html, body').animate({
-				scrollTop: ((sec4Top - 60) + "px")
+				scrollTop: ((sec4Top - 65) + "px")
 			}, 1000);
 		});
 		//////////////////////////////////

@@ -25,6 +25,9 @@
 }
 body {
 	font-family: var(--font-body);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 header { /* make sure anything in the header transitions */
 	transition: all 0.3s;
@@ -41,7 +44,7 @@ header { /* make sure anything in the header transitions */
 	padding-top: 35px;
 }
 .header_small {/* changes when small */
-	height: 60px;
+	height: 65px;
 	background-color: var(--background);
 	padding-top: 7px;
 }
@@ -83,7 +86,7 @@ nav ul {
 	position: fixed;
 	left: 0;
 	top: 0;
-	background-color: yellow;
+	background-color: var(--secondary-accent);
 	z-index: 9999;
 }
 .all_parallax { /* things mutual to all the parallax panels, on large screens */
@@ -148,20 +151,43 @@ nav ul {
 	left: 0;
 	width: 50px;
 	height: 50px;
-	background-color: var(--muted-text);
-
+	color: var(--lines-borders);
+	background-color: var(--secondary-accent);
 	background-image: url(../images/icons/svg-path.svg);
 	background-size: 85% 85%;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 1em;
 	cursor: pointer;/* to change curs0r when hover. */
+	/* bottom: 10px; */
+  	left: 10px;
 }
 
 footer {
-	padding-top: 100px;
+	background: var(--background);
+	color: var(--text);
 	text-align: center;
-	
+	margin-top: 165px;
+	padding: 18px 10px;
+	border-top: 1px solid var(--lines-borders);
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+footer small {
+	display: block;
+	color: var(--muted-text);
+}
+
+footer a {
+	color: var(--primary-accent);
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: var(--secondary-accent);
+	text-decoration: underline;
 }
 
 /* media query */
@@ -171,7 +197,7 @@ footer {
 		height: 90px;/* make header shorter */
 	}
 	.header_small {
-		height: 60px;/* make header shorter */
+		height: 65px;/* make header shorter */
 	}
 	.header_big nav ul li {
 		width: 30vw;/* each li about a third */
@@ -182,6 +208,7 @@ footer {
 	}
 	#page {
 		top: 90px;/* adjust to the new height of header */
+		padding-bottom: 140px;
 	}
 	.all_parallax {
 		height: 65px;
@@ -210,5 +237,9 @@ footer {
 	#toTop {
 		width: 40px;
 		height: 40px;/* on small screens smaller icon */
+	}
+
+	footer {
+		margin-top: 40px;
 	}
 }/* end media query */
