@@ -16,8 +16,6 @@
 	--font-header: "Arial Black", Arial;
 	--font-body: "Helvetica Neue", Helvetica, Arial, "sans-serif";
 }
-
-
 * {
 	margin: 0;
 	padding: 0;
@@ -162,7 +160,6 @@ nav ul {
 	/* bottom: 10px; */
   	left: 10px;
 }
-
 footer {
 	background: var(--background);
 	color: var(--text);
@@ -174,17 +171,14 @@ footer {
 	display: block;
 	width: 100%;
 }
-
 footer small {
 	display: block;
 	color: var(--muted-text);
 }
-
 footer a {
 	color: var(--primary-accent);
 	text-decoration: none;
 }
-
 footer a:hover {
 	color: var(--secondary-accent);
 	text-decoration: underline;
@@ -238,7 +232,6 @@ footer a:hover {
 		width: 40px;
 		height: 40px;/* on small screens smaller icon */
 	}
-
 	footer {
 		margin-top: 40px;
 	}
