@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Audio and Video</title>
+<style>
+    body {
+        background-color:rgb(37, 37, 37);
+        color:aliceblue;
+        padding: 2rem;
+        margin:0;
+    }
+    button {
+        background-color: #3d0000;
+        border-color: rgb(82, 82, 82);
+        border-radius: 8px;
+        border-style: solid;
+        color: rgb(180, 180, 180);
+        font-size: 1.2rem;
+        font-weight: 600;
+        height: 36px;
+    }
+    #mediacontrols {
+        width: 600px;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        position: relative;
+    }
+    #timedisplay {
+        font-family: 'Courier New', Courier, monospace;
+        color:rgb(180, 180, 180);
+        font-size: 1.4rem;
+        position: absolute;
+        right: 0px;
+        top: 15px;
+    }
+    #controlbarrail {
+        background-color: darkred;
+        height: 3px;
+        margin-bottom: 0.6rem;
+        cursor: pointer;
+    }
+    #controlbarfill {
+        background-color: rgb(236, 216, 172);
+        height: 3px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <video id="videoelement" src="media/video.mp4" poster="media/still.png" preload="metadata" width="600"></video>
+
+    <div id="mediacontrols">
+        <div id="controlbarrail">
+            <div id="controlbarfill"></div>
+        </div>
+
+        <button id="playbutton">Play</button>
+        <button id="pausebutton">Pause</button>
+
+        <div id="timedisplay">
+            <time id="positiondisplay">00:00</time>
+            <time id="durationdisplay">00:00</time>
+        </div>
+    </div>
+
+    <script>
+        var media = document.querySelector('#videoelement');
+        var play = document.querySelector('#playbutton');
+        var pause = document.querySelector('#pausebutton');
+        var position = document.querySelector('#positiondisplay');
+        var duration = document.querySelector('#durationdisplay');
+        var rail = document.querySelector('#controlbarrail');
+        var fill = document.querySelector('#controlbarfill');
+
+        play.addEventListener('click', playMedia);
+        function playMedia() {
+            media.play();
+        }
+
+        pause.addEventListener('click', pauseMedia);
+        function pauseMedia() {
+            media.pause();
+        }
+
+        rail.addEventListener('click', seekMedia);
+        fill.addEventListener('click', seekMedia);
+        function seekMedia(e) {}
+
+        media.addEventListener('loadedmetadata', updateTime);
+        media.addEventListener('timeupdate', updateTime);
+        function updateTime() {}
+
+
+    </script>
+
+</body>
+</html>

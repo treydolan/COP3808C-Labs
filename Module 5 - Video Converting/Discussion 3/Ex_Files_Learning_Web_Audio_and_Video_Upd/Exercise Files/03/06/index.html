@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Audio and Video</title>
+<style>
+    body{
+        background-color:rgb(37, 37, 37);
+        margin: 0;
+    }
+    a {
+        color:aliceblue;
+    }
+    #video-container {
+        height:450px;
+        width:100%;
+        overflow: hidden;
+        position:fixed;
+        top:0;
+    }
+    #content-container {
+        position:relative;
+        top:0;
+    }
+</style>
+</head>
+<body>
+    <div id="video-container">
+        <video src="media/video.mp4" allowfullscreen autoplay loop width="100%"></video>
+    </div>
+    <div id="content-container">
+        <h1>Looping Background Video</h1>
+    </div>
+</body>
+</html>

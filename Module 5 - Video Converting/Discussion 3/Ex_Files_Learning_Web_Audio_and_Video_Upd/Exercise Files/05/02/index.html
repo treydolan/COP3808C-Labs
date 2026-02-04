@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Audio and Video</title>
+<style>
+    body{
+        background-color:rgb(37, 37, 37);
+        color:aliceblue;
+        padding: 2rem;
+        margin:0;
+    }
+    a, time {
+        color:aliceblue;
+    }
+</style>
+</head>
+<body>
+    <video src="media/video.mp4" poster="media/still.png" preload="metadata" width="600"></video>
+
+    <div id="mediacontrols">
+        <button id="playbutton">Play</button>
+        <button id="pausebutton">Pause</button>
+        <div id="timedisplay">
+            <time id="positiondisplay">00:00</time>
+            <time id="durationdisplay">00:00</time>
+        </div>
+        <div id="controlbarrail">
+            <div id="controlbarfill"></div>
+        </div>
+    </div>
+
+</body>
+</html>
