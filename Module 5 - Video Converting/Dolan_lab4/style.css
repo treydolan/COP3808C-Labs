@@ -32,7 +32,7 @@ video {
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
-	background:url(images/traffic.jpg) no-repeat;
+	background:url(images/surfing.jpg) no-repeat;
 	background-size: cover;
 	-moz-transition: all 1s;
 	-webkit-transition: all 1s;
@@ -157,7 +157,7 @@ body {
 }
 
 #content {
-	background: url(images/traffic.jpg) no-repeat top center;
+	background: url(images/surfing.jpg) no-repeat top center;
 	background-size: cover;
 	width: 73vw;
 	right: 1vw;
