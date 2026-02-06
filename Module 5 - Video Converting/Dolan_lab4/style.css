@@ -39,28 +39,6 @@ video {
 	transition: all 1s;
 }
 
-.stopfade {
-	opacity: 0.5;
-}
-
-#pbutton {
-	display: block;
-	width: 80%;
-	padding: .4vw;
-	border: none;
-	font-size: 1vw;
-	background: rgba(255,255,255,0.23);
-	color: #fff;
-	border-radius: 3px;
-	cursor: pointer;
-	-webkit-transition: .3s background;
-	transition: .3s background;
-}
-
-#pbutton:hover {
-	background: rgba(0,0,0,0.5);
-}
-
 .my_header {
 	position: fixed;
 	z-index: 999;
@@ -152,6 +130,9 @@ nav ul {
 	width: 20vw;
 	height: auto;
 	opacity: 0.9;
+
+	max-width: 700px;
+	max-height: 700px;
 }
 
 @media only screen and (max-width: 959px) {
@@ -160,8 +141,7 @@ body {
 	background:black;
 }
 
-#bgvid,
-#pbutton {
+#bgvid {
 	display: none;
 }
 
@@ -198,7 +178,9 @@ body {
 
 #content img {
 	
-	width: 50%;
+	max-width: 700px;
+	max-height: 700px;
+	height: auto;
 	
 }
 }
@@ -253,5 +235,8 @@ body {
 	margin: 0.5% 7%;
 	width: 86%;
 	height: auto;
+
+	max-width: 700px;
+	max-height: 700px;
 }
 }

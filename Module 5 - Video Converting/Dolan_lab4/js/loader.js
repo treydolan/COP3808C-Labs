@@ -14,10 +14,10 @@ $(document).ready(function() {
 		$('#main_nav ul li a, header h1').removeClass("my_current");
 		
 		$(this).addClass("my_current");
-     		$("#content").animate({'opacity':0}, 1000, function(){
+     		$("#content").animate({'opacity':0}, 300, function(){
 				 $('html, body').animate({ scrollTop:"0px" }, 500, function(){
       $('#content').load(url, function() {
-            $("#content").animate({'opacity': 1}, 1000);
+            $("#content").animate({'opacity': 1}, 800);
 				
         });
 		 });
