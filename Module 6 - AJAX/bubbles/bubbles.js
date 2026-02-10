@@ -1,3 +1,7 @@
+window.onscroll = function() {
+    parallaxbubbles();
+};
+
 var bubble1 = document.getElementById('bubbles1');
 var bubble2 = document.getElementById('bubbles2');
 var fish = document.getElementById('fish');
