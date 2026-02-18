@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun with Data</title>
+    <script>
+        function showDetails(food) {
+            var foodType = food.getAttribute("data-food-type");
+            alert("The " + food.innerHTML + " is a " + foodType + ".");
+        }
+    </script>
+</head>
+<body>
+    <h1>Species</h1>
+    <p>Click on a food to see what type of food it is:</p>
+
+    <ul>
+        <li onclick="showDetails(this)" id="greenbeans" data-food-type="vegetable">Green Beans</li>
+        <li onclick="showDetails(this)" id="banana" data-food-type="fruit">Banana</li>
+        <li onclick="showDetails(this)" id="steak" data-food-type="protein">Steak</li>
+    </ul>
+</body>
+</html>

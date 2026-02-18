@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loops</title>
+    <style>
+        body {
+            background: #ee82ee  url("img_computer.jpg") no-repeat right top;
+            margin-right: 200px;
+        }
+        h2,
+        p {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript For Loop</h2>
+    <p id="printhere"></p>
+
+    <h2>My Loop</h2>
+    <p id="printnumbers"></p>
+    <script>
+        var langs = ["HTML", "CSS", "Java", "Python", "JavaScript"];
+        var i = 0;
+        var len = langs.length;
+        var text = "";
+
+        for (i; i < len; i++) {
+            text += langs[i] + "<br>";
+        }
+
+        document.getElementById("printhere").innerHTML = text;
+
+        // ------------------ My Loop --------------------
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function evenOddFinder(arr) {
+            var loopLength = arr.length;
+            var output = "";
+
+            for(var i = 0; i < loopLength; i++) {
+                var num = numbers[i];
+
+                var evenOrOdd = (num % 2 === 0) ? "Even" : "Odd";
+
+                output += "Number: " + num + " | " + evenOrOdd + "<br>";
+            }
+
+            document.getElementById("printnumbers").innerHTML = output;
+        }
+
+        evenOddFinder(numbers);
+    </script>
+</body>
+</html>
