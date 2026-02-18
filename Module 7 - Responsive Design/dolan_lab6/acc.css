@@ -28,12 +28,11 @@ header {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-bottom:4px solid #0ea5e9;
 }
 header h1 {
 	padding:18px 15px;
-	color:#ffffff; /* changed */
-	text-shadow:0 2px 8px rgba(0,0,0,0.35);
+	color:#f9fdff;
+	text-shadow: 0 10px 12px rgba(0,0,0,.90);
 }
 #accordion {
 	width: 100%;
@@ -87,22 +86,22 @@ img.single{
 	float: left;
 	width: 50%;
 	margin: 1%;
-	border: 10px solid #fff;
+	border: 10px solid #0ea5e9;
 }
 img.gal{
 	display: block;
 	float: left;
 	width: 23%;
 	margin: 1%;
-	border: 10px solid #fff;
+	border: 10px solid #0ea5e9;
 }
-/* NEW class for 3-in-a-row (DO NOT USE "gal") */
+/* New class for 3 in a row */
 img.my-gallery{
 	display: block;
 	float: left;
 	width: 31.33%;
 	margin: 1%;
-	border: 10px solid #ffffff;
+	border: 10px solid #0ea5e9;
 }
 
 @media only screen and (max-width: 960px){
@@ -118,11 +117,5 @@ img.my-gallery{
 		float: none;
 		width: 98%;
 		margin: 1%;
-}
-
-	
-	
-
-	
-	
+	}	
 }
