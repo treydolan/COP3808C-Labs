@@ -3,16 +3,15 @@
 * {
 	padding: 0px;
 	margin: 0px;
-
 	box-sizing: border-box;
 }
 
-.myclear{
+.myclear {
 	clear:both;
 }
 
 body {
-	background-color: #555;
+	background-color: #0f172a;
 	font-family: "Helvetica Neue", Helvetica;
 	font-size: 100%;
 }
@@ -20,15 +19,21 @@ body {
 	width: 100vw;
 	max-width: 1200px;
 	margin: 0 auto;
-	background-color: #fff;
+	background-color: #f8fafc;
 	min-height: 100vh;
 }
 header {
-	min-height: 90px;
-	background-color: #ddd;
+	min-height:100px;
+	background-image: url("images/m6_assignment_header_cropped.jpeg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom:4px solid #0ea5e9;
 }
 header h1 {
-	padding: 15px;
+	padding:18px 15px;
+	color:#ffffff; /* changed */
+	text-shadow:0 2px 8px rgba(0,0,0,0.35);
 }
 #accordion {
 	width: 100%;
@@ -36,85 +41,83 @@ header h1 {
 }
 #accordion p {
 	margin-bottom: 10px;
+	color: #0f172a;
 }
 .tab {
 	padding:10px 10px 10px 50px;
-	background-color: #999;
-	border: solid 1px #333;
-	color: #fff;
+	background-color: #1e293b;
+	border: solid 1px #0f172a;
+	color: #e2e8f0;
 	cursor: pointer;
-	font-size:16px;
+	font-size: 16px;
 	font-weight: 300;
 	height: 40px;
-	position:relative;
+	position: relative;
 	transition: all 0.5s;
 }
-
 .currentTab {
-	background-color:#FEFF5B;
-	color:#A20002;
+	background-color: #0ea5e9;
+	color: #082f49;
 	font-weight: 700;
 }
-
 .tab img {
-	width:20px;
+	width: 20px;
 	height: 20px;
-	position:absolute;
+	position: absolute;
 	top: 10px;
-	left:10px;
+	left: 10px;
 	transform: rotate(0deg);
 	transition: all 0.5s;
+	filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
 }
-
 .currentTab img{
 	transform: rotate(90deg);
 }
-
-
-
 .panel {
 	padding: 10px;
-	background-color: #ccc;
-	border: solid 1px #333;
+	background-color: #e2e8f0;
+	border: solid 1px #0f172a;
 	
 }
-
-#content1, #content2, #content3, #content4 {
+#content1, #content2, #content3, #content4, #content5 {
 	display: none;
 }
-
 img.single{
-	display:block;
-	float:left;
-	width:50%;
-	margin:1%;
-	border:10px solid #fff;
+	display: block;
+	float: left;
+	width: 50%;
+	margin: 1%;
+	border: 10px solid #fff;
 }
-
-
-
-
 img.gal{
-	display:block;
-	float:left;
-	width:23%;
-	margin:1%;
-	border:10px solid #fff;
+	display: block;
+	float: left;
+	width: 23%;
+	margin: 1%;
+	border: 10px solid #fff;
+}
+/* NEW class for 3-in-a-row (DO NOT USE "gal") */
+img.my-gallery{
+	display: block;
+	float: left;
+	width: 31.33%;
+	margin: 1%;
+	border: 10px solid #ffffff;
 }
 
 @media only screen and (max-width: 960px){
-	img.gal{
-	width:48%;
-	margin:1%;
-}
+		img.gal{
+		width: 48%;
+		margin: 1%;
+	}
 		
 }
 
 @media only screen and (max-width: 640px){
-	img.gal, img.single{
-		float:none;
-	width:98%;
-	margin:1%;
+	img.gal, img.single, img.my-gallery {
+		float: none;
+		width: 98%;
+		margin: 1%;
 }
 
 	

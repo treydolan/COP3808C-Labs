@@ -1,32 +1,34 @@
  $(document).ready(function () {
- 	////////////////////////////////
- 	var allContents = $(".panel");
- 	//alert(allContents.length);
-	 var allTabs = $(".tab");
+
+	var allContents = $(".panel");
+	var allTabs = $(".tab");
+	var animSpeed = 700;
+
+	// OPEN SECTION 1 BY DEFAULT ON LOAD
+	allTabs.removeClass("currentTab");
+	allContents.hide();
+	$("#title1").addClass("currentTab");
+	$("#content1").show();
 	 
 	 
 	 
  	$(".tab").click(function () {
 
- 		var i;
- 		for (i = 0; i < allContents.length; i++) {
- 			//alert(allContents[i]);
+		// close everything
+		for (var i = 0; i < allContents.length; i++) {
 			$(allTabs[i]).removeClass("currentTab");
- 			$(allContents[i]).slideUp(500);
- 		}
+			$(allContents[i]).slideUp(animSpeed);
+		}
 
-	
-		
 		
  		var whoClicked = $(this).attr('data');
- 		//alert(whoClicked);
- 		//alert($("#"+whoClicked).css('display'));
+
  		if ($('#' + whoClicked).css('display') == 'none') {
 			$(this).addClass("currentTab");
- 			$("#" + whoClicked).slideDown(500);
+ 			$("#" + whoClicked).slideDown(animSpeed);
  		} else {
- 			$("#" + whoClicked).slideup(500);
+ 			$("#" + whoClicked).slideUp(animSpeed);
  		}
- 	}); //end function
+ 	});
 
- }); //end doc ready
+ });
