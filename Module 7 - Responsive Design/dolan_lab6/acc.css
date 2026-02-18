@@ -23,14 +23,14 @@ body {
 	min-height: 100vh;
 }
 header {
-	min-height:100px;
+	min-height: 100px;
 	background-image: url("images/m6_assignment_header_cropped.jpeg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 header h1 {
-	padding:18px 15px;
+	padding: 18px 15px;
 	color:#f9fdff;
 	text-shadow: 0 10px 12px rgba(0,0,0,.90);
 }
@@ -69,7 +69,7 @@ header h1 {
 	transition: all 0.5s;
 	filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
 }
-.currentTab img{
+.currentTab img {
 	transform: rotate(90deg);
 }
 .panel {
@@ -105,7 +105,7 @@ img.my-gallery{
 }
 
 @media only screen and (max-width: 960px){
-		img.gal{
+		img.gal {
 		width: 48%;
 		margin: 1%;
 	}

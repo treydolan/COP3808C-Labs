@@ -4,14 +4,12 @@
 	var allTabs = $(".tab");
 	var animSpeed = 700;
 
-	// OPEN SECTION 1 BY DEFAULT ON LOAD
+	// Open section 1 by default
 	allTabs.removeClass("currentTab");
 	allContents.hide();
 	$("#title1").addClass("currentTab");
 	$("#content1").show();
-	 
-	 
-	 
+	
  	$(".tab").click(function () {
 
 		// close everything
@@ -20,7 +18,6 @@
 			$(allContents[i]).slideUp(animSpeed);
 		}
 
-		
  		var whoClicked = $(this).attr('data');
 
  		if ($('#' + whoClicked).css('display') == 'none') {
@@ -30,5 +27,4 @@
  			$("#" + whoClicked).slideUp(animSpeed);
  		}
  	});
-
  });
