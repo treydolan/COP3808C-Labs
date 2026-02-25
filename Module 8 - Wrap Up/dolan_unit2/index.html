@@ -11,6 +11,7 @@
     <header class="site-header">
         <h1>Sunshine Web Services</h1>
         <p class="tagline">Speed. Accessibility. SEO. Handled by us, so you can relax.</p>
+        <div id="width"></div>
     </header>
     <main class="wrap">
         <section id="home" class="accordion" aria-label="Site information accordion">
@@ -19,7 +20,7 @@
                 <h2>
                     <button class="panel-toggle" type="button" aria-expanded="true">
                         Welcome
-                        <img src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                        <img class="chev" src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Accordion Expand Button">
                     </button> 
                 </h2>
 
@@ -27,21 +28,29 @@
                     <div class="panel-grid">
                         <div class="panel-text">
                             <p>
-                                Sunshine Web Services is a fictional “walk-in” web tune-up service for small businesses,
-                                creators, and student projects. The goal is simple: make your site feel faster, look cleaner,
-                                and communicate its message clearly on phones and desktops. Instead of rebuilding everything,
+                                Sunshine Web Services is a “walk-in” web tune-up service for businesses, creators, and developers. The goal is simple: make your site feel faster, look cleaner, and communicate its message clearly on phones and desktops. Instead of rebuilding everything,
                                 we focus on high-impact fixes that improve the experience in a weekend.
                             </p>
                             <p>
                                 Our checkups are designed around real issues most sites have: oversized images, messy spacing,
                                 confusing navigation, missing alt text, and pages that don’t pass basic validation. By pairing
-                                a quick audit with targeted changes, we help you ship a more professional site—without losing
+                                a quick audit with targeted changes, we help you ship a more professional site without losing
                                 your existing branding or content.
                             </p>  
                         </div>
                         <div class="panel-media">
-                            <img src="" alt="Laptop showing a clean website layout">
-                            <img src="" alt="Mobile phone displaying a responsive page">
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-1981-digital-oMe_FjZnHGU-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-1981-digital-oMe_FjZnHGU-unsplash.jpg"
+                                    alt="Computer screen viewing analytics">
+                            </picture>
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-growtika-Am6pBe2FpJw-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-growtika-Am6pBe2FpJw-unsplash.jpg"
+                                    alt="Computer connected to servers in the cloud">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -51,7 +60,7 @@
                 <h2>
                     <button class="panel-toggle" type="button" aria-expanded="true">
                         Services
-                        <img src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                        <img class="chev" src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Accordion Expand Button">
                     </button> 
                 </h2>
 
@@ -66,8 +75,18 @@
                             </p>  
                         </div>
                         <div class="panel-media">
-                            <img src="" alt="Laptop showing a clean website layout">
-                            <img src="" alt="Mobile phone displaying a responsive page">
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-artur-shamsutdinov-7MJpHQdGXGA-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-artur-shamsutdinov-7MJpHQdGXGA-unsplash.jpg"
+                                    alt="Laptop showing code in a code editor">
+                            </picture>
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-nisonco-pr-and-seo-yIRdUr6hIvQ-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-nisonco-pr-and-seo-yIRdUr6hIvQ-unsplash.jpg"
+                                    alt="Wood blocks with the letter SEO">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -77,7 +96,7 @@
                 <h2>
                     <button class="panel-toggle" type="button" aria-expanded="true">
                         Process
-                        <img src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                        <img class="chev" src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Accordion Expand Button">
                     </button> 
                 </h2>
 
@@ -92,8 +111,18 @@
                             </p>  
                         </div>
                         <div class="panel-media">
-                            <img src="" alt="Laptop showing a clean website layout">
-                            <img src="" alt="Mobile phone displaying a responsive page">
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-ux-indonesia-qC2n6RQU4Vw-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-ux-indonesia-qC2n6RQU4Vw-unsplash.jpg"
+                                    alt="Team members designing a site in front of a laptop">
+                            </picture>
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/desktop/desktop-carlos-muza-hpjSkU2UYSU-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-carlos-muza-hpjSkU2UYSU-unsplash.jpg"
+                                    alt="Laptop screen showing data graphs">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -103,7 +132,7 @@
                 <h2>
                     <button class="panel-toggle" type="button" aria-expanded="true">
                         Case Studies
-                        <img src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                        <img class="chev" src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Accordion Expand Button">
                     </button> 
                 </h2>
 
@@ -111,15 +140,28 @@
                     <div class="panel-grid">
                         <div class="panel-text">
                             <p>
-                                Case Study A: A portfolio page looked fine on desktop but collapsed on mobile. We simplified the layout, improved spacing, and made the buttons easier to tap. Case Study B: A small business site used huge images that slowed everything down. We resized and compressed images, reducing load time while keeping the design intact.
+                                Mandy's Bakery: A shop site looked fine on desktop but collapsed on mobile. We simplified the layout, improved spacing, and made the buttons easier to tap. 
                             </p>
                             <p>
-                                Case Study C: A student project had weak structure—headings were skipped, sections were unclear, and the page didn’t feel “finished.” We rebuilt the content flow with consistent headings, improved typography, and added accessible alt text. Small improvements created a big jump in professionalism.
+                                South Florida Trading Cards: A small business site used huge images that slowed everything down. We resized and compressed images, reducing load time while keeping the design intact.
+                            </p>
+                            <p>
+                                Bob's Towing: Their site had weak structure. Headings were skipped, sections were unclear, and the page didn’t feel “finished.” We rebuilt the content flow with consistent headings, improved typography, and added accessible alt text. Small improvements created a big jump in professionalism.
                             </p>  
                         </div>
                         <div class="panel-media">
-                            <img src="" alt="Laptop showing a clean website layout">
-                            <img src="" alt="Mobile phone displaying a responsive page">
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-scott-graham-5fNmWej4tAA-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-scott-graham-5fNmWej4tAA-unsplash.jpg"
+                                    alt="Teammates working together over a laptop">
+                            </picture>
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg" alt="Laptop showing a clean website layout">
+                                <img src="assets/images/desktop/desktop-daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg" alt="Laptop showing a clean website layout"
+                                    alt="Project management board with sticky notes">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -129,7 +171,7 @@
                 <h2>
                     <button class="panel-toggle" type="button" aria-expanded="true">
                         Contact
-                        <img src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                        <img class="chev" src="assets/icons/arrow_forward_ios_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Accordion Expand Button">
                     </button> 
                 </h2>
 
@@ -144,8 +186,18 @@
                             </p>  
                         </div>
                         <div class="panel-media">
-                            <img src="" alt="Laptop showing a clean website layout">
-                            <img src="" alt="Mobile phone displaying a responsive page">
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-tyler-franta-iusJ25iYu1c-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-tyler-franta-iusJ25iYu1c-unsplash.jpg"
+                                    alt="Man with coffee sitting at his laptop">
+                            </picture>
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                        srcset="assets/images/mobile/mobile-firmbee-com-SpVHcbuKi6E-unsplash.jpg">
+                                <img src="assets/images/desktop/desktop-firmbee-com-SpVHcbuKi6E-unsplash.jpg"
+                                    alt="Woman viewing her mobile phone">
+                            </picture>
                         </div>
                     </div>
                 </div>

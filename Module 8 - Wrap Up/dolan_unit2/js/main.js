@@ -1,71 +1,119 @@
-// JavaScript for Unit 2 Project Site
-$(document).ready(function() {
-    var home = $('#home');
-    home.addClass('test');
-});
+// jQuery
+$(function () {
+  const $panels = $(".panel");
+  const $toggles = $(".panel-toggle");
 
-// Accordion behavior with smooth open/close height animation
-const panels = document.querySelectorAll(".panel");
-const toggles = document.querySelectorAll(".panel-toggle");
+  // Width Indication
+  const $width = $("#width");
+  function updateWidth() {
+    $width.text(window.innerWidth + "px");
+  }
 
-function closePanel(panel) {
-  const content = panel.querySelector(".panel-content");
-  const button = panel.querySelector(".panel-toggle");
+  // Run on load
+  updateWidth();
 
-  panel.classList.remove("is-open");
-  button.setAttribute("aria-expanded", "false");
-  content.style.maxHeight = "0px";
-}
-
-function openPanel(panel) {
-  const content = panel.querySelector(".panel-content");
-  const button = panel.querySelector(".panel-toggle");
-
-  panel.classList.add("is-open");
-  button.setAttribute("aria-expanded", "true");
-
-  // Set exact height for smooth transition
-  content.style.maxHeight = content.scrollHeight + "px";
-}
-
-function togglePanel(panel) {
-  const isOpen = panel.classList.contains("is-open");
-
-  // Close all first (accordion style)
-  panels.forEach(closePanel);
-
-  // Open selected if it was closed
-  if (!isOpen) openPanel(panel);
-}
-
-// Click handling
-toggles.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const panel = btn.closest(".panel");
-    togglePanel(panel);
+  // Run on resize
+  $(window).on("resize", function () {
+    updateWidth();
   });
 
-  // Keyboard handling (Space/Enter)
-  btn.addEventListener("keydown", (e) => {
+  // -------- Accordion --------
+  function closePanel($panel) {
+    const $content = $panel.find(".panel-content").first();
+    const $btn = $panel.find(".panel-toggle").first();
+
+    $panel.removeClass("is-open");
+    $btn.attr("aria-expanded", "false");
+    $content.css("max-height", "0px");
+  }
+
+  function openPanel($panel) {
+    const $content = $panel.find(".panel-content").first();
+    const $btn = $panel.find(".panel-toggle").first();
+
+    $panel.addClass("is-open");
+    $btn.attr("aria-expanded", "true");
+
+    // Set exact height for smooth transition
+    const h = $content[0].scrollHeight;
+    $content.css("max-height", h + "px");
+  }
+
+  function togglePanel($panel) {
+    if (!$panel || !$panel.length) return;
+
+    const isOpen = $panel.hasClass("is-open");
+    $panels.each(function () { closePanel($(this)); });
+    if (!isOpen) openPanel($panel);
+  }
+
+  // Click
+  $toggles.on("click", function () {
+    const $panel = $(this).closest(".panel");
+    togglePanel($panel);
+  });
+
+  // Keyboard (Enter/Space)
+  $toggles.on("keydown", function (e) {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      const panel = btn.closest(".panel");
-      togglePanel(panel);
+      const $panel = $(this).closest(".panel");
+      togglePanel($panel);
     }
   });
-});
 
-// Open first panel by default on load
-window.addEventListener("load", () => {
-  const first = panels[0];
-  panels.forEach(closePanel);
-  openPanel(first);
-});
+  // Open first panel on load
+  // $panels.each(function () { closePanel($(this)); });
+  // openPanel($panels.first());
 
-// Recalculate heights on resize (keeps open panel correct)
-window.addEventListener("resize", () => {
-  const open = document.querySelector(".panel.is-open");
-  if (!open) return;
-  const content = open.querySelector(".panel-content");
-  content.style.maxHeight = content.scrollHeight + "px";
+  // Open all panels during testing
+  $panels.each(function () {
+    openPanel($(this));
+  });
+
+  // Keep open panel height correct on resize
+  $(window).on("resize", function () {
+    const $open = $(".panel.is-open").first();
+    if (!$open.length) return;
+    const $content = $open.find(".panel-content").first();
+    $content.css("max-height", $content[0].scrollHeight + "px");
+  });
+
+  // -------- Responsive Image Swap --------
+  const BREAKPOINT = 640; // match your CSS breakpoint
+  const DESKTOP_DIR = "assets/images/desktop/";
+  const MOBILE_DIR = "assets/images/mobile/";
+
+  function swapImages() {
+    const useMobile = window.innerWidth <= BREAKPOINT;
+    const dir = useMobile ? MOBILE_DIR : DESKTOP_DIR;
+
+    $(".resp-img").each(function () {
+      const $img = $(this);
+      const base = $img.data("base"); // from data-base="..."
+      if (!base) return;
+
+      const nextSrc = dir + base;
+
+      // avoid pointless re-sets
+      if ($img.attr("src") !== nextSrc) {
+        $img.attr("src", nextSrc);
+      }
+    });
+  }
+
+  // simple throttle so resize doesn't spam
+  function throttle(fn, wait) {
+    let timer = null;
+    return function () {
+      if (timer) return;
+      timer = setTimeout(() => {
+        timer = null;
+        fn();
+      }, wait);
+    };
+  }
+
+  swapImages();
+  $(window).on("resize", throttle(swapImages, 150));
 });
