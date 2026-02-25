@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Responsive Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".up").click(function(){
+            $("p").slideUp(800);
+        });
+        $(".down").click(function(){
+            $("p").slideDown(800);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2 class="up">Slide up</h2>
+    <p>This is a paragraph.</p>
+    <h2 class="down">Slide down</h2> 
+</body>
+</html>
