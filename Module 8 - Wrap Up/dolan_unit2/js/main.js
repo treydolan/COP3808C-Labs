@@ -62,14 +62,14 @@ $(function () {
     }
   });
 
-  // Open first panel on load
-  // $panels.each(function () { closePanel($(this)); });
-  // openPanel($panels.first());
+  //Open first panel on load
+  $panels.each(function () { closePanel($(this)); });
+  openPanel($panels.first());
 
   // Open all panels during testing
-  $panels.each(function () {
-    openPanel($(this));
-  });
+  // $panels.each(function () {
+  //   openPanel($(this));
+  // });
 
   // Keep open panel height correct on resize
   $(window).on("resize", function () {

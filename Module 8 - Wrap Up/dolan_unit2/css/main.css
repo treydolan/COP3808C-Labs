@@ -1,17 +1,21 @@
-/* Basic reset */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-img { max-width: 100%; height: auto; display: block; }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
 
 /* Theme */
 :root {
-  /* --bg: #0b1320;
-  --card: #121d2f;
-  --card2: #0f1a2b;
-  --text: #eaf0ff;
-  --muted: #b9c6e6;
-  --line: rgba(255,255,255,.12);
-  --accent: #6ee7ff; */
 
     /* Coastal base */
   --ocean-950:#07131f;   /* deep ocean */
@@ -35,8 +39,28 @@ img { max-width: 100%; height: auto; display: block; }
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 15% 0%, rgba(255,210,122,.20), transparent 60%), radial-gradient(900px 500px at 85% 10%, rgba(119,227,213,.12), transparent 55%), linear-gradient(180deg, var(--ocean-950), #050c14 70%);
   color: var(--text);
+  margin: 0;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* IMPORTANT: only the base gradient here */
+  background: linear-gradient(180deg, var(--ocean-950), #050c14 70%);
+}
+
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(1200px 600px at 15% 0%, rgba(255,210,122,.10), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(119,227,213,.06), transparent 55%);
+
 }
 
 .site-header {
@@ -68,7 +92,7 @@ body {
 
 .site-header h1 {
   margin: 0 0 .25rem;
-  color: #0b243a; /* deep ocean */
+  color: #0b243a;
   letter-spacing: .5px;
   text-shadow: 0 6px 18px rgba(255,255,255,.35), 0 10px 24px rgba(0,0,0,.25);
 }
@@ -88,17 +112,22 @@ body {
   width: min(1100px, 92vw);
   margin: 0 auto 2.5rem;
   padding: 1rem;
+
+  /* was rgba(7,19,31,.55) */
+  background: rgba(7,19,31,.95); /* or just #07131f */
+
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.08);
+
+  /* optional: remove glass blur to avoid “layering” artifacts */
+  backdrop-filter: none;
 }
 
 .accordion {
-  padding: 1rem;
-  background: rgba(8, 24, 38, .55);
-  border: 1px solid rgba(255,255,255,.16);
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.45),
-    inset 0 1px 0 rgba(255,255,255,.10),
-    0 0 0 1px rgba(119,227,213,.08); /* seafoam tint */
-  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(7,19,31,.92), rgba(10,28,44,.92));
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  overflow: hidden; /* important: keeps everything inside the same bg */
 }
 
 .panel {
@@ -115,7 +144,7 @@ body {
 .panel-toggle{
   width: 100%;
   padding: 1rem 1rem;
-  background: var(--card);
+  background: transparent;
   color: var(--text);
   border: none;
   display: flex;
@@ -150,7 +179,7 @@ body {
 .panel-content{
   max-height: 0;
   overflow: hidden;
-  background: var(--card2);
+  background: transparent;
   transition: max-height .7s ease;
 }
 
@@ -178,10 +207,22 @@ body {
 }
 
 .site-footer {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  color: rgba(255,255,255,.75);
+  border-top: 1px solid rgba(255,255,255,.12);
+
+  /* looks like ocean glass */
+  background: linear-gradient(
+    90deg,
+    rgba(7,19,31,.92),
+    rgba(10,28,44,.92)
+  );
+}
+
+.site-footer small {
+  display: block;
   text-align: center;
-  padding: 1.5rem 1rem 2rem;
-  color: var(--muted);
-  border-top: 1px solid rgba(255,255,255,.08);
 }
 
 /* Responsive */
