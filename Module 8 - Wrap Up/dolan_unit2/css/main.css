@@ -2,11 +2,12 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
+
 
 img {
   max-width: 100%;
@@ -48,8 +49,6 @@ img {
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   color: var(--text);
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -125,7 +124,6 @@ body::before {
   background: rgba(7,19,31,.95);
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.08);
-  backdrop-filter: none;
 }
 
 .navigation {
@@ -159,6 +157,10 @@ body::before {
   color: var(--ocean-950);
 }
 
+.navigation ul li a:visited {
+  color: var(--seafoam-300);
+}
+
 .accordion {
   background: linear-gradient(180deg, rgba(7,19,31,.92), rgba(10,28,44,.92));
   border: 1px solid rgba(255,255,255,.14);
@@ -179,7 +181,7 @@ body::before {
   margin: 0;
 }
 
-.panel-toggle{
+.panel-toggle {
   width: 100%;
   padding: 1rem 1rem;
   background: transparent;
@@ -189,6 +191,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  font-family: inherit;
   font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
@@ -283,17 +286,13 @@ body::before {
   background: var(--sand-100);
 }
 
-.toTop img {
-  width: 16px;
-  height: 16px;
-  display: block;
-}
 
 .site-footer {
   width: 100%;
   padding: 1rem 1.25rem;
   color: rgba(255,255,255,.75);
   border-top: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(90deg, rgba(7,19,31,.92), rgba(10,28,44,.92));
 }
 
 .site-footer small {

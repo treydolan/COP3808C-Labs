@@ -58,7 +58,7 @@ $(function () {
   $(".navigation a").on("click", function (e) {
     e.preventDefault();
 
-    const targetId = $(this).attr("href"); // "#services"
+    const targetId = $(this).attr("href");
     const $targetPanel = $(targetId).closest(".panel");
     if (!$targetPanel.length) return;
 
