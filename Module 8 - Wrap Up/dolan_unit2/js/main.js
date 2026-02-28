@@ -1,4 +1,3 @@
-// jQuery
 $(function () {
   const $panels = $(".panel");
   const $toggles = $(".panel-toggle");
@@ -79,66 +78,29 @@ $(function () {
     $content.css("max-height", $content[0].scrollHeight + "px");
   });
 
- // -------- Navigation -> Open Accordion Panel (transition-safe scroll) --------
-$(".navigation a").on("click", function (e) {
-  e.preventDefault();
+  // Navigation -> Open Accordion Panel (transition-safe scroll)
+  $(".navigation a").on("click", function (e) {
+    e.preventDefault();
 
-  const targetId = $(this).attr("href"); // "#services"
-  const $targetPanel = $(targetId).closest(".panel");
-  if (!$targetPanel.length) return;
+    const targetId = $(this).attr("href"); // "#services"
+    const $targetPanel = $(targetId).closest(".panel");
+    if (!$targetPanel.length) return;
 
-  // open it (your existing logic)
-  togglePanel($targetPanel);
+    // open it (your existing logic)
+    togglePanel($targetPanel);
 
-  const $content = $targetPanel.find(".panel-content").first();
+    const $content = $targetPanel.find(".panel-content").first();
 
-  const doScroll = () => {
-    // scroll-margin-top in CSS will handle the offset nicely
-    $targetPanel[0].scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  // Wait for the accordion animation to finish, then scroll
-  $content.one("transitionend webkitTransitionEnd", doScroll);
-
-  // Fallback in case transitionend doesn’t fire (mobile weirdness)
-  setTimeout(doScroll, 750);
-});
-
-  // -------- Responsive Image Swap --------
-  const BREAKPOINT = 640; // match your CSS breakpoint
-  const DESKTOP_DIR = "assets/images/desktop/";
-  const MOBILE_DIR = "assets/images/mobile/";
-
-  function swapImages() {
-    const useMobile = window.innerWidth <= BREAKPOINT;
-    const dir = useMobile ? MOBILE_DIR : DESKTOP_DIR;
-
-    $(".resp-img").each(function () {
-      const $img = $(this);
-      const base = $img.data("base"); // from data-base="..."
-      if (!base) return;
-
-      const nextSrc = dir + base;
-
-      // avoid pointless re-sets
-      if ($img.attr("src") !== nextSrc) {
-        $img.attr("src", nextSrc);
-      }
-    });
-  }
-
-  // simple throttle so resize doesn't spam
-  function throttle(fn, wait) {
-    let timer = null;
-    return function () {
-      if (timer) return;
-      timer = setTimeout(() => {
-        timer = null;
-        fn();
-      }, wait);
+    const doScroll = () => {
+      // scroll-margin-top in CSS will handle the offset nicely
+      $targetPanel[0].scrollIntoView({ behavior: "smooth", block: "start" });
     };
-  }
 
-  swapImages();
-  $(window).on("resize", throttle(swapImages, 150));
+    // Wait for the accordion animation to finish, then scroll
+    $content.one("transitionend webkitTransitionEnd", doScroll);
+
+    // Fallback in case transitionend doesn’t fire (mobile weirdness)
+    setTimeout(doScroll, 750);
+  });
+
 });

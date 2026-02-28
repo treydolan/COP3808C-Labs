@@ -55,7 +55,7 @@ body {
   
 }
 
-body::before{
+body::before {
   content:"";
   position: fixed;
   inset: 0;
@@ -74,9 +74,8 @@ body::before{
   background-position: center;
 }
 
-
 /* Gradient to Improve Header Readability */
-.site-header::before{
+.site-header::before {
   content:"";
   position:absolute;
   inset:0;
@@ -104,7 +103,7 @@ body::before{
   text-shadow: 0 6px 18px rgba(255,255,255,.35), 0 10px 24px rgba(0,0,0,.25);
 }
 
-.site-header .tagline{
+.site-header .tagline {
   color: var(--pal5);
   -webkit-text-stroke-width: .1px;
   -webkit-text-stroke-color: black;
@@ -148,11 +147,9 @@ body::before{
   border-radius: .5em;
   text-decoration: none;
 }
+
 .navigation ul li a:hover {
   background-color: var(--sand-100);
-}
-.navigation ul li a:visited {
-  color: var(--ocean-800);
 }
 
 .accordion {
