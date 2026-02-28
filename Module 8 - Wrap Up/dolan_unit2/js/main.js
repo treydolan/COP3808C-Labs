@@ -2,20 +2,6 @@ $(function () {
   const $panels = $(".panel");
   const $toggles = $(".panel-toggle");
 
-  // Width Indication
-  const $width = $("#width");
-  function updateWidth() {
-    $width.text(window.innerWidth + "px");
-  }
-
-  // Run on load
-  updateWidth();
-
-  // Run on resize
-  $(window).on("resize", function () {
-    updateWidth();
-  });
-
   // -------- Accordion --------
   function closePanel($panel) {
     const $content = $panel.find(".panel-content").first();
@@ -33,7 +19,6 @@ $(function () {
     $panel.addClass("is-open");
     $btn.attr("aria-expanded", "true");
 
-    // Set exact height for smooth transition
     const h = $content[0].scrollHeight;
     $content.css("max-height", h + "px");
   }
@@ -46,13 +31,11 @@ $(function () {
     if (!isOpen) openPanel($panel);
   }
 
-  // Click
   $toggles.on("click", function () {
     const $panel = $(this).closest(".panel");
     togglePanel($panel);
   });
 
-  // Keyboard (Enter/Space)
   $toggles.on("keydown", function (e) {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -65,12 +48,6 @@ $(function () {
   $panels.each(function () { closePanel($(this)); });
   openPanel($panels.first());
 
-  // Open all panels during testing
-  // $panels.each(function () {
-  //   openPanel($(this));
-  // });
-
-  // Keep open panel height correct on resize
   $(window).on("resize", function () {
     const $open = $(".panel.is-open").first();
     if (!$open.length) return;
@@ -78,7 +55,6 @@ $(function () {
     $content.css("max-height", $content[0].scrollHeight + "px");
   });
 
-  // Navigation -> Open Accordion Panel (transition-safe scroll)
   $(".navigation a").on("click", function (e) {
     e.preventDefault();
 
@@ -86,21 +62,32 @@ $(function () {
     const $targetPanel = $(targetId).closest(".panel");
     if (!$targetPanel.length) return;
 
-    // open it (your existing logic)
     togglePanel($targetPanel);
 
     const $content = $targetPanel.find(".panel-content").first();
 
     const doScroll = () => {
-      // scroll-margin-top in CSS will handle the offset nicely
       $targetPanel[0].scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    // Wait for the accordion animation to finish, then scroll
     $content.one("transitionend webkitTransitionEnd", doScroll);
 
-    // Fallback in case transitionend doesn’t fire (mobile weirdness)
     setTimeout(doScroll, 750);
+  });
+
+  // -------- Back to Top --------
+  const $toTop = $(".toTop");
+
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop() > 300) {
+      $toTop.addClass("visible");
+    } else {
+      $toTop.removeClass("visible");
+    }
+  });
+
+  $toTop.on("click", function () {
+    $("html, body").animate({ scrollTop: 0 }, 500);
   });
 
 });
