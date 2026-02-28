@@ -79,6 +79,31 @@ $(function () {
     $content.css("max-height", $content[0].scrollHeight + "px");
   });
 
+ // -------- Navigation -> Open Accordion Panel (transition-safe scroll) --------
+$(".navigation a").on("click", function (e) {
+  e.preventDefault();
+
+  const targetId = $(this).attr("href"); // "#services"
+  const $targetPanel = $(targetId).closest(".panel");
+  if (!$targetPanel.length) return;
+
+  // open it (your existing logic)
+  togglePanel($targetPanel);
+
+  const $content = $targetPanel.find(".panel-content").first();
+
+  const doScroll = () => {
+    // scroll-margin-top in CSS will handle the offset nicely
+    $targetPanel[0].scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Wait for the accordion animation to finish, then scroll
+  $content.one("transitionend webkitTransitionEnd", doScroll);
+
+  // Fallback in case transitionend doesn’t fire (mobile weirdness)
+  setTimeout(doScroll, 750);
+});
+
   // -------- Responsive Image Swap --------
   const BREAKPOINT = 640; // match your CSS breakpoint
   const DESKTOP_DIR = "assets/images/desktop/";
